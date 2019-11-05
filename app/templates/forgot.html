@@ -1,0 +1,46 @@
+<!-- Copyright (c) * Raman -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
+    <header class="masthead mb-auto">
+      <h1>Sample</h1>
+    </header>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            {{message}}
+            </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form class="form-signin" method = "POST" action = "">
+        <img class="mb-4" src="/assets/logo.png" alt="" width="75" height="75">
+        <h1 class="h3 mb-3 font-weight-normal">Please enter details</h1>
+
+        <div class="form-group">
+            {{form.Password(class="form-control form-control-lg")}}
+        </div>
+        <div class="form-group">
+            {{form.ConfirmPassword(class="form-control form-control-lg")}}
+        </div>
+            <div class="form-group">
+            {{form.submit(class="btn btn-outline-info form")}}
+        </div>
+
+      </form>
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Forgot Password Page for <a href="http://example.com/">Sample</a>, by <a href="#">Raman</a>.</p>
+      </div>
+    </footer>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+{% endblock %}
+
